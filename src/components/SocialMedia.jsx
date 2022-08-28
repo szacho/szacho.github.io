@@ -1,6 +1,6 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faGithub, faKaggle, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {faGithub, faKaggle, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
 const SocialMedia = () => (
 <ul className="sidebar--social-media">

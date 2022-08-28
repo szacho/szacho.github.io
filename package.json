@@ -1,5 +1,5 @@
 {
-  "name": "@example/blog",
+  "name": "szacho.github.io",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,20 +10,20 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.3.4",
-    "@astrojs/mdx": "^0.10.0",
+    "@astrojs/image": "^0.3.6",
+    "@astrojs/mdx": "^0.10.2",
     "@astrojs/prism": "^1.0.1",
-    "@astrojs/react": "^1.0.0",
+    "@astrojs/react": "^1.1.0",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
-    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "astro": "^1.0.6",
-    "katex": "^0.16.0",
+    "astro": "^1.1.1",
+    "katex": "^0.16.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-katex": "^6.0.2",
     "remark-math": "^5.1.1",
-    "sass": "^1.54.4"
+    "sass": "^1.54.5"
   }
 }
