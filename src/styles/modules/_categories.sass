@@ -1,0 +1,53 @@
+.category
+  margin-bottom: 15px
+  font-size: 2.15rem
+  &--item
+    align-items: baseline
+    flex-wrap: wrap-reverse
+    font-size: 0.85em
+  &--name
+    font-weight: $t-weight-bold
+  &--link
+    margin-right: 0.6em
+    line-height: 1.35
+    text-decoration: none
+    transition: 0.25s color
+    color: $c-highlight-1
+    &:hover
+      color: darken($c-highlight-1, 12%)
+    &-highlight
+      @extend .category--link
+      color: $c-highlight-2
+      &:hover
+        color: darken($c-highlight-2, 12%)
+  &--entry-date
+    font-size: 0.85em
+    white-space: nowrap
+  &--tag
+    font-size: 0.48em
+    background: darken($c-tags, 27%)
+    transition: 0.25s all
+    border-radius: 0.15em
+    box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.75)
+    line-height: 1.4
+    &:hover
+      cursor: pointer
+      background-color: darken($c-tags, 15%)
+    &-highlight
+      @extend .category--tag
+      background: darken($c-tags-highlight, 8%)
+      &:hover
+        cursor: pointer
+        background-color: $c-tags-highlight
+    &-in-article
+      font-size: 0.39em
+      margin: .2rem 0
+    &:not(:last-child)
+      margin-right: 1em
+    &-link
+      text-decoration: none
+      text-transform: uppercase
+      font-weight: $t-weight-bold
+      color: $c-base-font
+      display: block
+      padding: 0.17em 0.37em

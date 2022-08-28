@@ -1,0 +1,9 @@
+---
+import { Image } from '@astrojs/image/components'
+
+const { src, alt, caption, style } = Astro.props
+---
+<figure style={style}>
+    <Image src={src} alt={alt} />
+    <figcaption>{caption}</figcaption>
+</figure>

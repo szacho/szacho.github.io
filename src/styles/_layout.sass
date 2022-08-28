@@ -1,0 +1,80 @@
+#header
+  justify-content: space-between
+  margin-bottom: 10px
+  align-items: flex-end
+  box-sizing: border-box
+  padding: 10px 15px
+
+#home
+  font-size: 1.7rem
+  section:not(:last-child)
+    margin-bottom: 15px
+
+#about
+  flex-direction: column
+  font-size: 2rem
+  line-height: 1.4em
+  color: $c-article-font
+  a:hover
+    text-decoration: underline
+
+#sidebar
+  box-sizing: border-box
+  width: 35%
+  padding: 15px
+  position: sticky
+  top: 0
+
+  +mQ(781px)
+    width: 98%
+    position: relative
+
+#main
+  width: 65%
+  padding: 15px
+
+  +mQ(781px)
+    width: 98%
+    margin: 0 auto
+    margin-top: 20px
+    padding: 4px
+
+#all-content
+  +mQ(781px)
+    flex-direction: column
+    
+
+.l-flex
+  display: flex
+
+.l-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.l-highlight
+  background-color: rgba(12,255,160,.45)
+.l-highlight:hover
+  background-color: lighten(rgba(12,255,160,.6), 10%)
+
+.l-italic
+  font-style: italic
+
+.l-checked
+  text-decoration: line-through
+
+.l-bold
+  font-weight: $t-weight-bold
+
+.l-link
+  transition: 0.25s all ease-out
+  text-decoration: none
+  &:hover
+    color: darken($c-highlight-1, 12%)
+
+.l-no-margin
+  margin: 0 !important
+
+.katex-display
+  overflow-x: auto
+  overflow-y: hidden

@@ -1,0 +1,20 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Sidebar from "../components/Sidebar.astro"
+
+const { title, description, image } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={title} description={description} image={image} />
+	</head>
+	<body>
+		<div class='m-wrapper l-flex' id='all-content'>
+			<Sidebar id='sidebar' />
+			<main id='main'>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>

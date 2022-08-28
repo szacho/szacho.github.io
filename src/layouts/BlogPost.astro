@@ -1,0 +1,50 @@
+---
+import MainLayout from "./MainLayout.astro";
+import Link from "../components/Link.astro";
+
+export interface Props {
+	content: {
+		title: string;
+		short: string;
+		date: string;
+		image?: string;
+		tags: string[];
+	};
+}
+
+const {
+	content: { title, short, date, image, tags },
+} = Astro.props as Props;
+
+const dateFormatted = new Date(date).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+})
+---
+
+<MainLayout title={title} description={short} image={image}>
+	<article class="blog-article">
+		<header class='blog-article--header l-flex'>
+			<div class='l-flex blog-article--header-wrapper'>
+				<time class='blog-article--date' item-prop='datePublished'>
+				  {dateFormatted}
+				</time>
+				<ul class='l-flex blog-article--tags'>
+					{tags.map((tag) => (
+						<li class='category--tag category--tag-in-article'>
+							<Link href={`/tags/#${tag}`}  class="category--tag-link">
+								{tag}
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+			<h1 class='blog-article--title'>{ title }</h1>
+		</header>
+
+		<section class='l-flex blog-article--content'>
+			<slot />
+		</section>
+	</article>
+</MainLayout>

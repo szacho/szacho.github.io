@@ -1,0 +1,39 @@
+---
+import Link from "./Link.astro"
+import BackgroundImage from "./BackgroundImage.astro"
+
+const { post } = Astro.props
+const { date, tags, title, short, image } = post.frontmatter
+
+const dateFormatted = new Date(date).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+})
+---
+
+<BackgroundImage className='blog-entry' imagePath={image}>
+    <div class="l-flex blog-entry--meta" style={{justifyContent: 'space-between', width: '100%'}}>
+        <time class='blog-entry--date' item-prop='datePublished'>
+            {dateFormatted}
+        </time>
+        <ul class='blog-entry--categories l-flex'>
+            {tags.map((tag) => (
+                <li class='category--tag'>
+                    <Link href={`/tags/#${tag}`}  class="category--tag-link">
+                        { tag }
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    </div>
+    <h2 class='blog-entry--title'>
+        <Link href={ post.url } class='blog-entry--link'>{ title }</Link>
+    </h2>
+    <p class='blog-entry--excerpt'>
+        { short }&hellip;
+    </p>
+    <Link href={ post.url } class='blog-entry--readmore'>read more &raquo;</Link>
+</BackgroundImage>
+
+

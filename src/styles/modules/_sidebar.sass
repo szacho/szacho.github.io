@@ -1,0 +1,113 @@
+
+.sidebar
+    box-sizing: border-box    
+
+.sidebar--logo
+    display: flex
+    align-items: center
+    font-family: 'Roboto Mono', monospace
+
+    img
+        width: 40px
+        height: 40px
+        border-radius: 1px
+        box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2)
+        background: linear-gradient(-45deg, #12c2e9, #c471ed, #f64f59)
+        // background: linear-gradient(-45deg, #FEAC5E, #C779D0, #4BC0C8)
+        background-size: 300% 300%
+        animation: gradient 12s ease infinite
+
+    @keyframes gradient
+        0%
+            background-position: 0% 50%
+
+        50%
+            background-position: 100% 50%
+        
+        100%
+            background-position: 0% 50%
+
+    +mQ(781px)
+        justify-content: center
+
+.sidebar--description
+    color: $c-lighter-font
+    font-size: 1.6rem
+    margin-top: 10px
+
+    +mQ(781px)
+        display: none
+
+.sidebar--name
+    text-decoration: none
+    font-weight: $t-weight-bold
+    font-size: 2.2rem
+    color: $c-base-font
+    margin: 0 10px
+
+.sidebar--nav-ul
+    display: flex
+    flex-direction: column
+
+    +mQ(781px)
+        flex-direction: row
+        justify-content: center
+
+.sidebar--nav-item
+    &:first-child
+        margin-top: 15px
+    margin-top: 10px
+
+    +mQ(781px)
+        margin: 0 10px !important
+
+
+.sidebar--nav-link
+    font-size: 1.8rem
+    // font-weight: $t-weight-bold
+    color: $c-base-font
+    text-decoration: none
+    &:hover
+        color: $c-highlight-2
+        text-decoration: underline
+
+.sidebar--nav-link.active
+    font-weight: $t-weight-bold
+    text-decoration: underline
+
+.sidebar--social-media
+    width: 50%
+    margin: 0 auto
+    margin-top: 25px
+    display: flex
+    justify-content: space-around
+    li:not(:first-child)
+        margin-left: 10px
+    a
+        transition: 0.1s all ease-out
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 8px
+        border: 1.2px solid $c-lighter-font
+        border-radius: 50%
+        color: $c-article-font
+        &:hover
+            color: $c-highlight-2
+            border: 1.2px solid $c-highlight-2
+
+    &-icon
+        width: 20px
+        height: 20px
+
+    +mQ(781px)
+        display: none
+
+.sidebar--note
+    color: $c-lighter-font
+    font-size: 1.4rem
+    text-align: center
+    margin-top: 15px
+
+    +mQ(781px)
+        display: none

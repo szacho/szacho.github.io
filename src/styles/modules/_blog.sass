@@ -1,0 +1,74 @@
+.blog-entry
+  font-size: 2.4rem
+  align-items: baseline
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  font-weight: $t-weight-bold
+
+  padding-bottom: 2.5rem
+  &:not(:first-child)
+    padding-top: 2.5rem
+
+  +mQ(600px)
+    font-size: 2.05rem
+    &::after
+      content: ''
+      width: 100%
+
+  &--link
+    transition: color 0.2s ease-out
+    margin-right: 0.5em
+    text-decoration: none
+    color: $c-highlight-1
+    &:hover
+      color: darken($c-highlight-1, 12%)
+    &-highlight
+      @extend .blog-entry--link
+      color: $c-highlight-2
+      &:hover
+        color: darken($c-highlight-2, 12%)
+
+  &--title
+    margin-bottom: .5rem
+    line-height: 1.25
+    +mQ(600px)
+      margin-bottom: .2rem
+
+
+  &--date
+    font-size: 0.8em
+    margin-right: 0.7em
+    white-space: nowrap
+
+  &--categories
+    align-items: center
+    flex-wrap: wrap
+    font-weight: $t-weight-bold
+    position: relative
+    top: -0.1em
+    +mQ(600px)
+      margin-top: 3.5px
+
+  &--date
+    font-size: 1.7rem
+
+  &--excerpt
+    font-size: 1.9rem
+    font-weight: 400
+    line-height: 1.6em
+    hyphens: auto
+    margin: 10px 0
+    color: $c-article-font
+
+  &--readmore
+    text-decoration: none
+    color: $c-highlight-1
+    font-size: 1.8rem
+    &:hover
+      color: darken($c-highlight-1, 12%)
+      text-decoration: underline
+
+.blog-entry--meta
+  +mQ(320px)
+    flex-direction: column-reverse

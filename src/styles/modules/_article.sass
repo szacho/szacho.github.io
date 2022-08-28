@@ -1,0 +1,96 @@
+.blog-article
+  $defaultMargin: .6rem
+  &--header
+    flex-flow: column wrap
+    margin-bottom: 10px
+    font-size: 2.8rem
+    &-wrapper
+      justify-content: space-between
+      align-items: center
+      flex-wrap: wrap
+  &--title
+    font-weight: $t-weight-bold
+    transition: 0.25s all ease-out
+    color: $c-highlight-1
+    line-height: 1.25
+    &-highlight
+      @extend .blog-article--title
+      color: $c-highlight-2
+
+  &--date
+    font-size: 0.65em
+    font-weight: $t-weight-bold
+    white-space: nowrap
+  &--tags
+    flex-wrap: wrap
+  &--content
+    flex-direction: column
+    font-size: 1.8rem
+    line-height: 1.6em
+    hyphens: auto
+    color: $c-article-font
+    p, iframe, img, figure, blockquote, ul, ol
+      margin-bottom: 1em
+      margin-top: 0
+    figure > img
+      margin-bottom: 0
+    h2, h3
+      color: lighten($c-article-font, 7%)
+      font-weight: $t-weight-bold
+      margin-bottom: .2em
+    h2
+      font-size: 2.4rem
+      margin-top: 1em
+    h3
+      font-size: 2.1rem
+      margin-top: .5em
+    strong
+      font-weight: $t-weight-bold
+    iframe
+      width: 100%
+      +mQ(600px)
+        height: 338px
+    figure img
+      width: 100%
+      height: auto
+      margin: 0 auto
+      border-radius: 5px
+    img
+      box-shadow: 0px 1px 1px 0.5px rgba(0,0,0,0.5)
+    blockquote
+      border-left: 3px solid $c-highlight-2
+      font-style: italic
+      position: relative
+      right: 2rem
+      padding-left: 2rem
+      p
+        margin-bottom: 0
+    ul, ol
+      margin-left: 4rem
+    ul
+      list-style-type: disc
+    ol
+      list-style-type: decimal
+    li
+      padding-left: .5rem
+    a
+      text-decoration: none
+    a:hover
+      text-decoration: underline
+    figcaption
+      font-size: .8em
+      margin-top: .2em
+      line-height: 1.3em
+      text-align: center
+    // hr
+    //   display: block
+    //   height: 1px
+    //   width: 100%
+    //   margin: 0 0 .5rem 0
+    //   background-color: $c-code-border
+    //   border: none
+    em
+      font-style: italic
+    sup
+      vertical-align: super
+      font-size: smaller

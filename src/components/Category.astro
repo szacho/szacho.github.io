@@ -1,0 +1,21 @@
+---
+import Link from './Link.astro'
+
+let { category, posts } = Astro.props
+posts = posts.filter(post => post.frontmatter.tags.includes(category))
+---
+<ul class='category'>
+    <h2 id={category} class='category--name'>{ category }</h2>
+    { posts.map(post => (
+        <li class='category--item l-flex'>
+            <Link href={post.url} class='category--link'>{post.frontmatter.title}</Link>
+            <time class='category--entry-date'>
+                {new Date(post.frontmatter.date).toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+                })}
+            </time>
+        </li>
+    ))}
+</ul>

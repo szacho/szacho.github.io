@@ -1,0 +1,26 @@
+.navbar
+    display: none
+    background: $c-background
+    height: 48px
+    padding: 4px
+    width: 100%
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2)
+    position: fixed
+    z-index: 100
+    justify-content: center
+    align-items: center
+    +mQ(781px)
+        display: flex
+    
+    +mQ(320px)
+        justify-content: flex-end
+
+    &--name
+        text-decoration: none
+        font-weight: $t-weight-bold
+        font-size: 1.8rem
+        color: $c-base-font
+        
+        +mQ(320px)
+            display: none
+    

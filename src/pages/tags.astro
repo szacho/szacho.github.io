@@ -1,0 +1,24 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Category from '../components/Category.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_LOGO } from '../config';
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
+
+let categories = [...new Set(posts.map(post => post.frontmatter.tags).flat())].sort();
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION} image={SITE_LOGO}>
+    <!-- display list of tags -->
+    <ul>
+        {categories.map(category => (
+            <li>
+                <Category category={category} posts={posts}/>
+            </li>
+        ))}
+    </ul>
+</MainLayout>

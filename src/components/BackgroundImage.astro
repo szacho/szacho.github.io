@@ -1,0 +1,20 @@
+---
+const { className, imagePath } = Astro.props
+const radialBackground = `
+    radial-gradient(50% 45% at 50% 50%, rgba(0, 0, 0, 0.5), rgb(17 24 39 / 1)),
+    url(${imagePath})
+`
+---
+<style define:vars={{ radialBackground }}>
+div {
+    background: var(--radialBackground);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+</style>
+
+<div class={className}>
+    <slot />
+</div>
