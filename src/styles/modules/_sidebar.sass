@@ -81,20 +81,18 @@
     margin-top: 25px
     display: flex
     justify-content: space-around
-    li:not(:first-child)
-        margin-left: 10px
+
     a
         transition: 0.1s all ease-out
         display: flex
         justify-content: center
         align-items: center
-        padding: 8px
-        border: 1.2px solid $c-lighter-font
         border-radius: 50%
         color: $c-article-font
+        svg
+            filter: rgb(0 0 0 / 25%) 1.6px 1.6px 2.4px
         &:hover
             color: $c-highlight-2
-            border: 1.2px solid $c-highlight-2
 
     &-icon
         width: 20px
