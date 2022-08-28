@@ -35,7 +35,7 @@ Also, please have in mind that this is just an insight into the project, so shor
 This method can be applied only to ODEs in the form of
 
 $$
-y'(t) = \frac{\textrm{d}\!y}{\textrm{d}\!t} = f(t, y).
+y'(t) = \frac{\textrm{d}y}{\textrm{d}t} = f(t, y).
 $$
 
 Let $h > 0$ - step height. The RK4 approximation of  $y(t_{n+1}) = y_{n+1}$ is given by
@@ -114,10 +114,10 @@ These relations lead to the following system of ODEs:
 
 $$
 \begin{aligned}
-  \frac{\textrm{d}\!S}{\textrm{d}\!t}&= G(S, I) - \sigma S - \beta \left(\frac{A}{S}\right)S, \\
-  \frac{\textrm{d}\!I}{\textrm{d}\!t}&= \beta \left(\frac{A}{S}\right)S -\sigma I - dI, \\
-  \frac{\textrm{d}\!B}{\textrm{d}\!t}&= eI - mB - \lambda BS + \mu, \\ 
-  \frac{\textrm{d}\!A}{\textrm{d}\!t}&= \lambda BS - rA - \beta \left(\frac{A}{S}\right)A.
+  \frac{\textrm{d}S}{\textrm{d}t}&= G(S, I) - \sigma S - \beta \left(\frac{A}{S}\right)S, \\
+  \frac{\textrm{d}I}{\textrm{d}t}&= \beta \left(\frac{A}{S}\right)S -\sigma I - dI, \\
+  \frac{\textrm{d}B}{\textrm{d}t}&= eI - mB - \lambda BS + \mu, \\ 
+  \frac{\textrm{d}A}{\textrm{d}t}&= \lambda BS - rA - \beta \left(\frac{A}{S}\right)A.
 \end{aligned}
 $$
 
