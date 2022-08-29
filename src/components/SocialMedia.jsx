@@ -1,6 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faGithub, faKaggle, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import {faGithub, faKaggle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faRss } from '@fortawesome/free-solid-svg-icons'
 
 const SocialMedia = () => (
 <ul className="sidebar--social-media">
@@ -12,6 +13,9 @@ const SocialMedia = () => (
     </li>
     <li>
         <a href='https://www.linkedin.com/in/mszachniewicz/'><FontAwesomeIcon icon={faLinkedinIn} className="sidebar--social-media-icon"/></a>    
+    </li>
+    <li>
+        <a href='/rss.xml'><FontAwesomeIcon icon={faRss} className="sidebar--social-media-icon"/></a>    
     </li>
 </ul>
 )
