@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Link from '../components/Link.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_LOGO } from '../config';
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={SITE_LOGO} />
+	</head>
+	<body>
+		<div class='m-wrapper l-flex' id='all-content'>
+			<main class="not-found">
+				<Link href="/" rel="bookmark" class="not-found--link">
+					<h1>404</h1>
+					<img src='/logo.png' />
+				</Link>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+.not-found
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center    
+
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+
+    h1
+        font-size: 7rem
+        font-weight: $t-weight-bold
+        text-shadow: rgb(0 0 0 / 25%) 1.6px 1.6px 2.4px
+
+    img
+        width: 300px
+        border-radius: 5px
+        +gleaming-logo()
+    
+    
+    &--link
+        text-decoration: none
+        color: $c-base-font
+        text-decoration: none
+        text-align: center
+        &:hover
+            color: $c-highlight-2
