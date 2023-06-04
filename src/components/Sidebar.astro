@@ -1,32 +1,47 @@
 ---
-import Link from './Link.astro'
-import SocialMedia from './SocialMedia.jsx'
+import Link from "./Link.astro";
+import SocialMedia from "./SocialMedia.jsx";
+import { SITE_TITLE } from "../config";
 
 const today = new Date();
 ---
 
 <aside class="sidebar" id="sidebar">
     <div class="m-sticky-wrapper">
+        <Link
+            href="/"
+            style="text-decoration: none;"
+            class="l-flex sidebar--logo"
+        >
+            <img src="/logo.png" />
+            <div class="sidebar--name">{SITE_TITLE}</div>
+        </Link>
 
-    <Link href="/" style="text-decoration: none;" class="l-flex sidebar--logo">
-            <img src='/logo.png' />
-            <div class="sidebar--name">think before you die</div>
-    </Link>
-
-    <p class="sidebar--description">
-        artificial intelligence, internet of things, backpacking, and more&hellip;
-    </p>
-    <nav>
-        <ul class="sidebar--nav-ul">
-            <li class="sidebar--nav-item">
-                <Link class="sidebar--nav-link" href="/" rel="bookmark">blog</Link>
-            </li> 
-            <li class="sidebar--nav-item">
-                <Link class="sidebar--nav-link" href="/tags/" rel="bookmark">tags</Link>
-            </li> 
-        </ul>
-    </nav>
-    <SocialMedia />
-    <p class="sidebar--note">&copy; Michał Szachniewicz {today.getFullYear()}</p>
+        <p class="sidebar--description">
+            artificial intelligence, internet of things, backpacking, and
+            more&hellip;
+        </p>
+        <nav>
+            <ul class="sidebar--nav-ul">
+                <li class="sidebar--nav-item">
+                    <Link class="sidebar--nav-link" href="/" rel="bookmark">
+                        blog
+                    </Link>
+                </li>
+                <li class="sidebar--nav-item">
+                    <Link
+                        class="sidebar--nav-link"
+                        href="/tags/"
+                        rel="bookmark"
+                    >
+                        tags
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+        <SocialMedia />
+        <p class="sidebar--note">
+            &copy; Michał Szachniewicz {today.getFullYear()}
+        </p>
     </div>
-  </aside>
+</aside>
