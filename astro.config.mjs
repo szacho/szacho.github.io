@@ -18,5 +18,7 @@ export default defineConfig({
   integrations: [mdx({
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex]
-  }), sitemap(), react(), image()],
+  }), sitemap(), react(), image({
+    serviceEntryPoint: '@astrojs/image/sharp',
+  })],
 });

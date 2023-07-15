@@ -1,16 +1,18 @@
 ---
-import Entry from '../components/Entry.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import Entry from "../components/Entry.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_LOGO } from '../config';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_LOGO } from "../config";
 
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
+	(a, b) =>
+		new Date(b.frontmatter.date).valueOf() -
+		new Date(a.frontmatter.date).valueOf()
 );
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION} image={SITE_LOGO}>
 	<ul>
-		{posts.map((post) => ( <Entry post={post} /> ))}
+		{posts.map((post) => <Entry post={post} />)}
 	</ul>
 </MainLayout>
