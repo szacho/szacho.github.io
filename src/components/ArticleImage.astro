@@ -1,8 +1,9 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from "astro:assets";
 
-const { src, alt, caption, style } = Astro.props
+const { src, alt, caption, style } = Astro.props;
 ---
+
 <figure style={style}>
     <Image src={src} alt={alt} />
     <figcaption>{caption}</figcaption>

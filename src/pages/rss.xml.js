@@ -1,20 +1,20 @@
 import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
-const postImportResult = import.meta.glob('./posts/*.{md,mdx}', { eager: true });
-const posts = Object.values(postImportResult).sort(
-    (a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
-);
-
-export async function get(context) {
+export async function GET(context) {
+    const posts = (await getCollection("posts")).sort(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    );
     return rss({
         title: SITE_TITLE,
         description: SITE_DESCRIPTION,
-        site: import.meta.env.SITE,
+        site: context.site,
         items: posts.map((post) => ({
-            link: post.url,
-            title: post.frontmatter.title,
-            pubDate: post.frontmatter.date,
+            link: `/posts/${post.slug}/`,
+            title: post.data.title,
+            pubDate: post.data.date,
+            description: post.data.short,
         })),
         stylesheet: '/rss-styles.xsl'
     })
