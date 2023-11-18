@@ -23,7 +23,7 @@ Bark beetles reproduce in the inner bark of trees. Many species attack and kill 
 
 We will try to find the answer by modeling the bark beetle outbreak with differential equations. This post is a fragment of a study project I have done with my partner [**Anna Klimiuk**](https://github.com/Stardust87). In the project, we generally discussed different epidemiological models, but here I will cover only the part about modeling bark beetle outbreak, including: 
 - implementation of Runge-Kutta 4th order method,
-- a dynamical model for bark beetle outbreaks proposed [here](https://www.fs.fed.us/rm/pubs_journals/2016/rmrs_2016_krivan_v001.pdf),
+- a dynamical model for bark beetle outbreaks proposed [here](https://www.fs.usda.gov/rm/pubs_journals/2016/rmrs_2016_krivan_v001.pdf),
 - numerical solution of this model,
 - 2D adaptation of the model,
 - 2D visualization of beetle bark outbreak on a forest map.
@@ -107,7 +107,7 @@ How one can model an outbreak of these little guys? They occur in forests in hun
 
 Well, there is a model, based on other epidemiological models (SIR), which has been adapted to this particular scenario - the bark beetle outbreak. It is a system of four differential equations that describe small changes in four different populations. Trees in a forest can be either bark beetle free, and thus susceptible $(S)$ to infestation or else already colonized by beetles and thus infested $(I)$. A single tree becomes infested depending on a sequence of beetle-related events. First, free-flying beetles $(B)$ have to find a tree, then settle on its surface and begin to bore through the bark. Next, these attacking beetles $(A)$ must survive host tree defenses and once they get to the cambium layer, a tree becomes infested $(I)$. The more beetles are attacking a single tree, the higher chance is to beat its defenses.
 
-For details, please refer to [this paper](https://www.fs.fed.us/rm/pubs_journals/2016/rmrs_2016_krivan_v001.pdf).
+For details, please refer to [this paper](https://www.fs.usda.gov/rm/pubs_journals/2016/rmrs_2016_krivan_v001.pdf).
 
 These relations lead to the following system of ODEs:
 
