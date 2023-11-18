@@ -9,10 +9,10 @@
     z-index: 100
     justify-content: center
     align-items: center
-    +mQ(781px)
+    +mQ($bp-large)
         display: flex
-    
-    +mQ(320px)
+
+    +mQ($bp-small)
         justify-content: flex-end
 
     &--name
@@ -20,7 +20,6 @@
         font-weight: $t-weight-bold
         font-size: 1.8rem
         color: $c-base-font
-        
-        +mQ(320px)
+
+        +mQ($bp-small)
             display: none
-    

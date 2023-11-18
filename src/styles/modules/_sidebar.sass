@@ -6,6 +6,11 @@
     display: flex
     align-items: center
     font-family: 'Roboto Mono', monospace
+    width: 100%
+
+    div
+        +mQ($bp-large)
+            justify-content: center
 
     img
         width: 35px
@@ -13,15 +18,12 @@
         border-radius: 1px
         +gleaming-logo()
 
-    +mQ(781px)
-        justify-content: center
-
 .sidebar--description
     color: $c-lighter-font
     font-size: 1.6rem
     margin-top: 10px
 
-    +mQ(781px)
+    +mQ($bp-large)
         display: none
 
 .sidebar--name
@@ -29,13 +31,13 @@
     font-weight: $t-weight-bold
     font-size: 2.2rem
     color: $c-base-font
-    margin: 0 10px
+    margin-left: 10px
 
 .sidebar--nav-ul
     display: flex
     flex-direction: column
 
-    +mQ(781px)
+    +mQ($bp-large)
         flex-direction: row
         justify-content: center
 
@@ -44,7 +46,7 @@
         margin-top: 15px
         margin-top: 10px
 
-    +mQ(781px)
+    +mQ($bp-large)
         margin: 0 10px !important
 
 .sidebar--nav-link
@@ -83,7 +85,7 @@
         width: 20px
         height: 20px
 
-    +mQ(781px)
+    +mQ($bp-large)
         margin-top: 15px
 
 .sidebar--note
@@ -92,5 +94,5 @@
     text-align: center
     margin-top: 15px
 
-    +mQ(781px)
+    +mQ($bp-large)
         display: none
